@@ -1,0 +1,14 @@
+{% extends "::base.html.twig" %}
+
+{% block title %}AppBundle:News:newsDetail{% endblock %}
+
+{% block main %}
+        <div>
+            <img src="{{new.imageUrl}}"/>
+        <ul>
+            <li>{{new.title}}</li>
+            <li>{{new.content}}</li>
+            <li>{{new.publicationDate | date('Y/m/d')}}</li>          
+        </ul>
+        </div>
+{% endblock %}

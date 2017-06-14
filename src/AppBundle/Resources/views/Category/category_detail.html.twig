@@ -1,0 +1,17 @@
+{% extends "::base.html.twig" %}
+
+{% block title %}AppBundle:Category:categoryDetail{% endblock %}
+
+{% block main %}
+    <ul>
+        <li>{{category.name}}</li>
+        <li>{{category.slug}}</li>
+        <li>
+            <ul>
+                {%for n in category.news%}
+                    <li>{{n.title}}</li>
+                    {%endfor%}
+            </ul>
+        </li>
+    </ul>
+{% endblock %}

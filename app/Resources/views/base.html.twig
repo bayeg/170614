@@ -3,11 +3,43 @@
     <head>
         <meta charset="UTF-8" />
         <title>{% block title %}Welcome!{% endblock %}</title>
-        {% block stylesheets %}{% endblock %}
-        <link rel="icon" type="image/x-icon" href="{{ asset('favicon.ico') }}" />
-    </head>
-    <body>
-        {% block body %}{% endblock %}
-        {% block javascripts %}{% endblock %}
-    </body>
+    {% block stylesheets %}{% endblock %}
+    <link rel="icon" type="image/x-icon" href="{{ asset('favicon.ico') }}" />
+    <style>
+        header, footer, menu{
+            border : black solid 1px;
+            text-align: center;
+        }
+
+        
+    </style>
+</head>
+<body>
+    {% block body %}
+        <header>
+            {% block HEADER %}
+            {{"HEADER"}}
+        {% endblock %}
+        </header>
+        <menu>
+        {% block MENU %}
+            <a href="{{path("authorList")}}">Auteurs</a>
+            <a href="{{path("newsList")}}">News</a>
+            <a href="{{path("categoryList")}}">Categories</a>
+        {% endblock %}
+        </menu>
+        <main>
+        {% block main %}
+            {{"main"}}
+        {% endblock %}
+        </main>
+        <footer>
+        {% block footer %}
+            {{"FOOTER"}}
+        {% endblock %}
+        </footer>
+
+    {% endblock %}
+{% block javascripts %}{% endblock %}
+</body>
 </html>

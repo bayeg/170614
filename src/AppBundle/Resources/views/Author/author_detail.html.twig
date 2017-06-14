@@ -1,0 +1,12 @@
+{% extends "::base.html.twig" %}
+
+{% block title %}AppBundle:Author:authorDetail{% endblock %}
+
+{% block main %}
+        <ul>
+            <li>{{author.name}}</li>
+            <li>{{author.firstname}}</li>
+            <li>{{author.dateofbirth | date('Y/m/d')}}</li>
+            <li>{{author.biography}}</li>           
+        </ul>
+{% endblock %}

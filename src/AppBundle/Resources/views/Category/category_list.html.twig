@@ -1,0 +1,15 @@
+{% extends "::base.html.twig" %}
+
+{% block title %}AppBundle:Category:categoryList{% endblock %}
+
+{% block main %}
+    {%for c in categories%}
+        <div>
+        <ul>
+            <a href="{{path("categoryDetail", {"id" : c.id})}}"><li>{{c.name}}</li></a>
+            <li>{{c.slug}}</li>
+         
+        </ul>
+        </div>
+    {%endfor%}
+{% endblock %}

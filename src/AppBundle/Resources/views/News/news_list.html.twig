@@ -1,0 +1,16 @@
+{% extends "::base.html.twig" %}
+
+{% block title %}AppBundle:News:newsList{% endblock %}
+
+{% block main %}
+    {%for n in news%}
+        <div>
+            <a href="{{path("newsDetail", {"id" : n.id})}}"><img src="{{n.imageUrl}}"/></a>
+        <ul>
+            <li>{{n.title}}</li>
+            <li>{{n.content}}</li>
+            <li>{{n.publicationDate | date('Y/m/d')}}</li>          
+        </ul>
+        </div>
+    {%endfor%}
+{% endblock %}
